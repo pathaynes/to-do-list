@@ -3,7 +3,7 @@ const client = require('../lib/client.js');
 client.connect()
     .then(() => {
         return client.query(`
-            CREATE TABLE types (
+            CREATE TABLE lists (
                 id SERIAL PRIMARY KEY NOT NULL,
                 description VARCHAR(256) NOT NULL UNIQUE,
                 done BOOLEAN NOT NULL DEFAULT FALSE

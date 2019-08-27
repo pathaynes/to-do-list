@@ -1,7 +1,7 @@
 import Component from '../Component.js';
 import Header from './Header.js';
 import TypeForm from '../types/listTypeForm.js';
-import listTypeList from '../types/ListTypeList.js';
+import ListTypeList from '../types/ListTypeList.js';
 import { getTypes, addType, updateType, removeType } from '../../services/api.js';
 
 class ListTypesApp extends Component {
@@ -14,7 +14,6 @@ class ListTypesApp extends Component {
 
         const typeForm = new TypeForm({
             onAdd: type => {
-                loading.update({ loading: true });
 
                 //part 1: do work on the server
                 return addType(type)
@@ -25,7 +24,6 @@ class ListTypesApp extends Component {
                         typeList.update({ types });
                     })
                     .finally(() => {
-                        loading.update({ loading: false });
                     });
             }
         });
@@ -53,7 +51,6 @@ class ListTypesApp extends Component {
                     });
             },
             onRemove: type => {
-                loading.update({ loading: true });
 
             // part 1: do work on the server
                 return removeType(type.id)
@@ -66,7 +63,6 @@ class ListTypesApp extends Component {
                         types.splice(index, 1);
                     })
                     .finally(() => {
-                        loading.update({ loading: false });
                     });
             }
         });
@@ -81,7 +77,6 @@ class ListTypesApp extends Component {
                 console.log(err);
             })
             .finally(() => {
-                loading.update({ loading: false });
             });
     }
 

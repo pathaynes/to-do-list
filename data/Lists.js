@@ -1,26 +1,26 @@
 module.exports = [
     {
-        priority: 'low',
-        description: 'clean car'
+        description: 'clean car',
+        priority: 'low'
     },
     {
-        priority: 'medium',
-        description: 'take out garbage'
+        description: 'take out garbage',
+        priority: 'medium'
     },
     {
-        priority: 'high',
-        description: 'learn to be a javascript ninja'
+        description: 'learn to be a javascript ninja',
+        priority: 'high'
     },
     {
-        priority: 'low',
-        description: 'kill neighbors cat'
+        description: 'kill neighbors cat',
+        priority: 'low'
     },
     {
-        priority: 'medium',
-        description: 'buy some fresh gear'
+        description: 'buy some fresh gear',
+        priority: 'medium'
     },
     {
-        priority: 'high',
-        description: 'Become CSS master'
+        description: 'Become CSS master',
+        priority: 'high'
     }
 ];
