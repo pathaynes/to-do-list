@@ -60,8 +60,11 @@ class ListTypesApp extends Component {
                         const types = this.state.types;
 
                     // remove from the list
-                        const index = types.indexOf(types);
+                        const index = types.indexOf(type);
                         types.splice(index, 1);
+                        console.log(types);
+
+                        typeList.update({ types });
                     })
                     .finally(() => {
                     });

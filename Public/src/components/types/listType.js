@@ -23,7 +23,6 @@ class ListType extends Component {
 
     renderHTML() {
         const type = this.props.type;
-        console.log(type);
 
         return /*html*/`
         <div id="list">
