@@ -15,7 +15,7 @@
     "recreate-tables": "npm run drop-tables && npm run create-tables",
     "setup-db": "npm run recreate-tables && npm run load-seed-data"
   },
-  "author": "Marty Nelson @martypdx",
+  "author": "Pat Haynes",
   "license": "ISC",
   "keywords": [],
   "dependencies": {

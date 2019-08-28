@@ -1,0 +1,24 @@
+form {
+    max-width: 400px;
+}
+
+main p.switch, main p.errors {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.errors {
+    font-family: monospace;
+    color: red;
+}
+
+.no-display {
+    display: none;
+}
+
+#signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
