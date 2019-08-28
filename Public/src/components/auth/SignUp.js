@@ -13,7 +13,7 @@ class SignUp extends Component {
             const user = {
                 displayName: formData.get('name'),
                 email: formData.get('email'),
-                passwords: formData.get('password')
+                password: formData.get('password')
             };
 
             onSignUp(user);

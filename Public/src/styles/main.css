@@ -6,9 +6,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: maroon;
     height: 200px;
     border: solid;
+}
+
+a {
+    color: white;
+    margin: 10px;
 }
 
 h1 {

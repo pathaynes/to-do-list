@@ -16,7 +16,7 @@ main p.switch, main p.errors {
     display: none;
 }
 
-#signin-container {
+#signin-container, #signup-container {
     display: flex;
     justify-content: center;
     align-items: center;

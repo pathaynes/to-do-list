@@ -10,8 +10,15 @@ if(!token && location.pathname !== '/auth.html') {
 }
 
 function fetchWithError(url, options) {
+    if(token) {
+        options = options || {};
+        options.headers = options.headers || {};
+        options.headers.Authorization = token;
+    }
+
     return fetch(url, options)
         .then(response => {
+            console.log(response);
             if(response.ok) {
                 return response.json();
             }

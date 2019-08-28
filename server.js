@@ -23,6 +23,7 @@ const authRoutes = createAuthRoutes({
         ).then(result => result.rows[0]);
     },
     insertUser(user, hash) {
+        console.log('insert user', user);
         return client.query(`
             INSERT into users (email, hash, display_name)
             VALUES ($1, $2, $3)

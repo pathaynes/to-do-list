@@ -7,6 +7,10 @@ class Header extends Component {
         return /*htm*/`
            <header>
                <h1>${title}</h1>
+               <nav>
+                    <a href="./index.html">TO DO</a>
+                    <a href="./auth.html">HOME</a>
+                </nav>
            </header>
         `;
     }
