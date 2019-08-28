@@ -15,9 +15,9 @@ function fetchWithError(url, options) {
 }
 
 export function getTypes(options) {
-    console.log('hey we are here!');
     const showAll = options && options.showAll;
     const url = `${URL}/types${showAll ? '?show=all' : ''}`;
+    console.log(url);
     return fetchWithError(url);
 }
 

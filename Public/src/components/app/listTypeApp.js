@@ -7,7 +7,7 @@ import { getTypes, addType, updateType, removeType } from '../../services/api.js
 class ListTypesApp extends Component {
 
     onRender(dom) {
-        const header = new Header({ title: 'Cat Types ' });
+        const header = new Header({ title: 'To Do List ' });
         dom.prepend(header.renderDOM());
 
         const main = dom.querySelector('main');
@@ -39,6 +39,7 @@ class ListTypesApp extends Component {
                     .then(updated => {
                         // part 2: integrate back into our list
                         const types = this.state.types;
+                        console.log(types);
 
                         // what to do with updated?
                         const index = types.indexOf(type);
@@ -72,11 +73,10 @@ class ListTypesApp extends Component {
             .then(types => {
                 this.state.types = types;
                 typeList.update({ types });
+                console.log(this.state);
             })
             .catch(err => {
                 console.log(err);
-            })
-            .finally(() => {
             });
     }
 

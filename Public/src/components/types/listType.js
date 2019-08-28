@@ -15,7 +15,7 @@ class ListType extends Component {
 
         const removeButton = dom.querySelector('.remove-button');
         removeButton.addEventListener('click', () => {
-            if(confirm(`You really wanna remove "${type.name}"?`)) {
+            if(confirm(`You really wanna remove "${type.description}"?`)) {
                 onRemove(type);
             }
         });
@@ -23,10 +23,12 @@ class ListType extends Component {
 
     renderHTML() {
         const type = this.props.type;
+        console.log(type);
 
         return /*html*/`
+        <div id="list">
             <li class="list-type">
-                <span class="${type.done ? 'Done' : ''}">${type.name}</span>
+                <span class="${type.done ? 'Done' : ''}">${type.description}</span>
                 <div>
                    <button class="done-button">
                        Make ${type.done ? 'Active' : 'Done'}
@@ -35,7 +37,8 @@ class ListType extends Component {
                         🗑
                    </button>
                 <div>
-            </li>
+            </div>
+        </ul>
         `;
     }
 

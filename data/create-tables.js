@@ -2,6 +2,7 @@ const client = require('../lib/client.js');
 
 client.connect()
     .then(() => {
+        console.log('connected');
         return client.query(`
             CREATE TABLE lists (
                 id SERIAL PRIMARY KEY NOT NULL,

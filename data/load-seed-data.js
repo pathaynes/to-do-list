@@ -12,7 +12,10 @@ client.connect()
                     RETURNING *;
                 `,
                 [listType.description])
-                    .then(result => result.rows[0]);
+                    .then(result => {
+                        console.log(result.rows);
+                        return result.rows[0];
+                    });
             })
         );
     })
