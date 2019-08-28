@@ -12,7 +12,7 @@ class TypeForm extends Component {
             event.preventDefault();
 
             const listType = {
-                name: input.value
+                description: input.value
             };
             error.textContent = '';
 

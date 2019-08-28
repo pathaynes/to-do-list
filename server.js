@@ -47,9 +47,10 @@ app.get('/api/types', (req, res) => {
 });
 
 app.post('/api/types', (req, res) => {
+    console.log(req.body);
     const type = req.body;
     client.query(`
-        INSERT INTO types (name)
+        INSERT INTO lists (description)
         VALUES ($1)
         RETURNING *;
     `,
@@ -70,11 +71,39 @@ app.post('/api/types', (req, res) => {
         }); 
 });
 
+app.put('/api/types/:id', (req, res) => {
+    const id = req.params.id;
+    const type = req.body;
+    client.query(`
+        UPDATE lists
+        SET   description = $2,
+              done = $3
+        WHERE id = $1
+        RETURNING *;          
+    `,
+    [id, type.description, type.inactive]
+    )
+        .then(result => {
+            res.json(result.rows[0]);
+        })
+        .catch(err => {
+            if(err.code === '23505') {
+                res.status(400).json({
+                    error: `Type "${type.name}" already exists`
+                });
+            }
+            res.status(500).json({
+                error: err.message || err
+            });
+        });
+});
+
+
 app.delete('/api/types/:id', (req, res) => {
     const id = req.params.id;
 
     client.query(`
-        DELETE FROM types
+        DELETE FROM lists
         WHERE  id = $1
         RETURNING *;
     `,

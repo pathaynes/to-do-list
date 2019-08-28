@@ -31,7 +31,7 @@ class ListType extends Component {
                 <span class="${type.done ? 'Done' : ''}">${type.description}</span>
                 <div>
                    <button class="done-button">
-                       Make ${type.done ? 'Active' : 'Done'}
+                       This ${type.done ? 'Has been finished' : 'Needs to get done'}
                    </button>
                    <button class="remove-button">
                         🗑
