@@ -33,7 +33,7 @@ class ListType extends Component {
                        This ${type.done ? 'Has been finished' : 'Needs to get done'}
                    </button>
                    <button class="remove-button">
-                        
+                        🗑
                    </button>
                 <div>
             </div>
