@@ -39,7 +39,7 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(morgan('dev')); // http logging
 app.use(cors()); // enable CORS request
-app.use(express.static('public')); // enable serving files from public
+app.use(express.static('Public')); // enable serving files from public
 app.use(express.json()); // enable reading incoming json data
 
 // setup authentication routes
