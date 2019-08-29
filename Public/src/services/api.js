@@ -1,6 +1,6 @@
 import store from './store.js';
 
-const URL = 'api';
+const URL = '/api';
 
 const token = store.getToken();
 if(!token && location.pathname !== '/auth.html') {
